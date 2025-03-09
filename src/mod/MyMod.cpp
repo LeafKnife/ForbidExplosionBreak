@@ -2,7 +2,7 @@
 
 #include "ll/api/mod/RegisterHelper.h"
 
-namespace my_mod {
+namespace lk {
 
 MyMod& MyMod::getInstance() {
     static MyMod instance;
@@ -18,6 +18,7 @@ bool MyMod::load() {
 bool MyMod::enable() {
     getSelf().getLogger().debug("Enabling...");
     // Code for enabling the mod goes here.
+    hook();
     return true;
 }
 
@@ -27,6 +28,6 @@ bool MyMod::disable() {
     return true;
 }
 
-} // namespace my_mod
+} // namespace lk
 
-LL_REGISTER_MOD(my_mod::MyMod, my_mod::MyMod::getInstance());
+LL_REGISTER_MOD(lk::MyMod, lk::MyMod::getInstance());
