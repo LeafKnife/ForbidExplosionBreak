@@ -16,6 +16,7 @@
 namespace lk {
 LL_TYPE_INSTANCE_HOOK(ExplodeHook, HookPriority::High, Explosion, &Explosion::explode, bool) {
     try {
+        // 神秘bug
         if (mRegion.getDimensionId().id == 0) {
             mBreaking = false;
             mFire     = false;
