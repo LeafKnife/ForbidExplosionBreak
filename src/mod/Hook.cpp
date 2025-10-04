@@ -14,16 +14,16 @@
 #include <mc/world/level/block/actor/BlockActor.h>
 
 namespace lk {
-LL_TYPE_INSTANCE_HOOK(ExplodeHook, HookPriority::High, Explosion, &Explosion::explode, bool) {
+LL_TYPE_INSTANCE_HOOK(ExplodeHook, HookPriority::High, Explosion, &Explosion::explode, bool, ::IRandom& random) {
     try {
         // 神秘bug
         if (mRegion.getDimensionId().id == 0) {
             mBreaking = false;
             mFire     = false;
         }
-        return origin();
+        return origin(random);
     } catch (std::exception) {
-        return origin();
+        return origin(random);
     }
 }
 
