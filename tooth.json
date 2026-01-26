@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "tooth": "github.com/LeafKnife/ForbidExplosionBreak",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "info": {
         "name": "ForbidExplosionBreak",
         "description": "ForbidExplosionBreak",
@@ -14,7 +14,7 @@
     },
     "asset_url": "https://github.com/LeafKnife/ForbidExplosionBreak/releases/download/v$(version)/ForbidExplosionBreak-windows-x64.zip",
     "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "1.5.x"
+        "github.com/LiteLDev/LeviLamina": "1.9.x"
     },
     "files": {
         "place": [

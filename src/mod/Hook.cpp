@@ -15,16 +15,14 @@
 
 namespace lk {
 LL_TYPE_INSTANCE_HOOK(ExplodeHook, HookPriority::High, Explosion, &Explosion::explode, bool, ::IRandom& random) {
-    try {
-        // 神秘bug
-        if (mRegion.getDimensionId().id == 0) {
-            mBreaking = false;
-            mFire     = false;
-        }
-        return origin(random);
-    } catch (std::exception) {
-        return origin(random);
+    // 神秘bug
+    auto x = mPos->x;
+    auto z = mPos->z;
+    if (mRegion.getDimensionId().id == 0 && x > -8000 && x < 8000 && z > -8000 && z < 8000) {
+        mBreaking = false;
+        mFire     = false;
     }
+    return origin(random);
 }
 
 void hook() { ExplodeHook::hook(); }
